@@ -16,6 +16,7 @@
 @synthesize eventText;
 @synthesize localNotif;
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"doneSegue"])
@@ -23,8 +24,7 @@
 	[eventText resignFirstResponder];
 	
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-	
-	// Get the current date
+    // Get the current date
 	NSDate *pickerDate = [self.datePicker date];
 	
 	// Break the date up into components
@@ -41,9 +41,9 @@
     [dateComps setHour:[timeComponents hour]];
 	// Notification will fire in one minute
     [dateComps setMinute:[timeComponents minute]];
-	[dateComps setSecond:[timeComponents second]];
-    NSDate *itemDate = [calendar dateFromComponents:dateComps];
-	
+    
+    NSDate *itemDate = [calendar dateFromComponents: dateComps];
+    //Start of first notification
     localNotif = [[UILocalNotification alloc] init];
     if (localNotif == nil)
         return;
@@ -58,14 +58,15 @@
     [timeFormat setDateFormat:@"HH:mm:ss"];
     NSString *theTime = [timeFormat stringFromDate:localNotif.fireDate];
     localNotif.alertBody = [NSString stringWithFormat: @"It's %@. Wake Up!", theTime];
-	
     localNotif.soundName = UILocalNotificationDefaultSoundName;
     localNotif.applicationIconBadgeNumber = 1;
-	
+    localNotif.repeatInterval = NSMinuteCalendarUnit;
+    //End of first notification
+    
 	// Specify custom data for th e notification
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"someValue" forKey:@"someKey"];
     localNotif.userInfo = infoDict;
-	
+    
 	// Schedule the notification
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     }

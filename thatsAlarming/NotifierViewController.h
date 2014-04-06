@@ -12,6 +12,6 @@
 
 @property (nonatomic, retain) IBOutlet UIDatePicker *datePicker;
 @property (retain, nonatomic) IBOutlet UILabel *eventText;
-@property (strong, nonatomic) UILocalNotification * localNotif;
+@property (strong, nonatomic) UILocalNotification *localNotif;
 
 @end

@@ -219,7 +219,7 @@
 				ORGANIZATIONNAME = "Derrick Cheng";
 				TargetAttributes = {
 					49343C9018F0EC1C000B0D64 = {
-						DevelopmentTeam = E6XW7AE35C;
+						DevelopmentTeam = 96YKJHV4XW;
 					};
 					49343CB418F0EC1C000B0D64 = {
 						TestTargetID = 49343C9018F0EC1C000B0D64;
