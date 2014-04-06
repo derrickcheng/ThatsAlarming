@@ -10,12 +10,11 @@
 
 @class NotifierViewController;
 
-@interface thatsAlarmingAppDelegate : NSObject <UIApplicationDelegate> {
+@interface thatsAlarmingAppDelegate : UIResponder <UIApplicationDelegate> {
     UIWindow *window;
     NotifierViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet NotifierViewController *viewController;
 
 @end

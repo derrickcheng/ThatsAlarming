@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) NSMutableArray* alarms;
-@property (strong, nonatomic) EKEventStore* eventStore;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

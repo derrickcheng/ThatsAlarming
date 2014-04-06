@@ -10,5 +10,7 @@
 
 @interface AlarmCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *time;
+@property (retain, nonatomic) IBOutlet UILabel *time;
+
+- (void)setWithAlarm:(UILocalNotification *) notification;
 @end

@@ -21,7 +21,6 @@
 		49343CB918F0EC1C000B0D64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49343C9818F0EC1C000B0D64 /* UIKit.framework */; };
 		49343CC118F0EC1C000B0D64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49343CBF18F0EC1C000B0D64 /* InfoPlist.strings */; };
 		49343CC318F0EC1C000B0D64 /* thatsAlarmingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49343CC218F0EC1C000B0D64 /* thatsAlarmingTests.m */; };
-		49DEC41C18F1123100D892EC /* EditOrAddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */; };
 		49DEC41E18F114C500D892EC /* alarmTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC41D18F114C500D892EC /* alarmTableCell.xib */; };
 		49DEC42118F115B900D892EC /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC42018F115B900D892EC /* AlarmCell.m */; };
 		5EAE9DC118F16B030063A20C /* NotifierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE9DC018F16B030063A20C /* NotifierViewController.m */; };
@@ -57,8 +56,6 @@
 		49343CBE18F0EC1C000B0D64 /* thatsAlarmingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "thatsAlarmingTests-Info.plist"; sourceTree = "<group>"; };
 		49343CC018F0EC1C000B0D64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49343CC218F0EC1C000B0D64 /* thatsAlarmingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thatsAlarmingTests.m; sourceTree = "<group>"; };
-		49DEC41A18F1123100D892EC /* EditOrAddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditOrAddAlarmViewController.h; sourceTree = "<group>"; };
-		49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditOrAddAlarmViewController.m; sourceTree = "<group>"; };
 		49DEC41D18F114C500D892EC /* alarmTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alarmTableCell.xib; sourceTree = "<group>"; };
 		49DEC41F18F115B900D892EC /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
 		49DEC42018F115B900D892EC /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 				49343CAA18F0EC1C000B0D64 /* thatsAlarmingAlarmsController.m */,
 				49343CAF18F0EC1C000B0D64 /* Images.xcassets */,
 				49343C9B18F0EC1C000B0D64 /* Supporting Files */,
-				49DEC41A18F1123100D892EC /* EditOrAddAlarmViewController.h */,
-				49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */,
 				49DEC41D18F114C500D892EC /* alarmTableCell.xib */,
 			);
 			path = thatsAlarming;
@@ -276,7 +271,6 @@
 				49343CA518F0EC1C000B0D64 /* thatsAlarmingAppDelegate.m in Sources */,
 				49343CAB18F0EC1C000B0D64 /* thatsAlarmingAlarmsController.m in Sources */,
 				49343CA118F0EC1C000B0D64 /* main.m in Sources */,
-				49DEC41C18F1123100D892EC /* EditOrAddAlarmViewController.m in Sources */,
 				49DEC42118F115B900D892EC /* AlarmCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,12 +11,10 @@
 @implementation thatsAlarmingAppDelegate
 
 @synthesize window;
-@synthesize viewController;
 
 
 #pragma mark -
 #pragma mark Application lifecycle
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -27,19 +25,7 @@
     
 	application.applicationIconBadgeNumber = 0;
 	
-	// Handle launching from a notification
-	UILocalNotification *localNotif =
-	[launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (localNotif) {
-		NSLog(@"Recieved Notification %@",localNotif);
-	}
-	
     return YES;
-}
-
-- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
-	// Handle the notificaton when the app is running
-	NSLog(@"Recieved Notification %@",notif);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -91,7 +77,6 @@
 
 
 - (void)dealloc {
-    [viewController release];
     [window release];
     [super dealloc];
 }
