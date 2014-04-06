@@ -84,6 +84,27 @@
 }
 
 
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Configure the cell...
+    
+	NSArray *notificationArray = [[UIApplication sharedApplication] scheduledLocalNotifications];
+	UILocalNotification *notif = [notificationArray objectAtIndex:indexPath.row];
+	
+    [cell.textLabel setText:notif.alertBody];
+	[cell.detailTextLabel setText:[notif.fireDate description]];
+	
+    return cell;
+}
+
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -101,4 +122,3 @@
 }
 
 @end
-

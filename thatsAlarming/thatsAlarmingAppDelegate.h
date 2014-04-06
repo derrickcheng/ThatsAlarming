@@ -10,7 +10,7 @@
 
 @class NotifierViewController;
 
-@interface thatsAlarmingAppDelegate : UIResponder <UIApplicationDelegate> {
+@interface thatsAlarmingAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     NotifierViewController *viewController;
 }
