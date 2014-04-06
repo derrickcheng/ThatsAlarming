@@ -25,5 +25,11 @@
 @property CGFloat effectiveScale;
 @property AVCaptureSession * session;
 
+@property (strong, nonatomic) NSMutableDictionary *frames;
+@property (strong, nonatomic) NSMutableDictionary *smileCount;
+@property double duration;
+@property float frameCount;
+@property float smileFrameCount;
+
 
 @end

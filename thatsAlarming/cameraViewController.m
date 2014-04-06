@@ -30,6 +30,11 @@
 @synthesize beginGestureScale;
 @synthesize effectiveScale;
 @synthesize session;
+@synthesize frames;
+@synthesize smileCount;
+@synthesize duration;
+@synthesize frameCount;
+@synthesize smileFrameCount;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +52,11 @@
     [self setupAVCapture];
     NSDictionary *detectorOptions = [[NSDictionary alloc] initWithObjectsAndKeys:CIDetectorAccuracyLow, CIDetectorAccuracy, nil];
 	self.faceDetector = [CIDetector detectorOfType:CIDetectorTypeFace context:nil options:detectorOptions];
+    frames = [NSMutableDictionary new];
+    smileCount = [NSMutableDictionary new];
+    duration = 5;
+    frameCount = 0;
+    smileFrameCount = 0;
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -238,11 +248,28 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void) ifSmileDoSomething: (NSArray *) features
 {
+    
+    NSDate *currTime = [NSDate new];
+    double minutes = [currTime timeIntervalSinceNow];
+    minutes = minutes / 60;
     for (CIFaceFeature * feature in features)
     {
+        frameCount = frameCount + 1;
+        [frames setObject: [NSNumber numberWithDouble: frameCount] forKey: [NSNumber numberWithDouble: minutes]];
         if (feature && feature.hasSmile)
         {
+            smileFrameCount = smileFrameCount + 1;
+            [smileCount setObject: [NSNumber numberWithDouble: smileFrameCount] forKey: [NSNumber numberWithDouble: minutes]];
+        }
+        NSNumber* smileCountPast = [smileCount objectForKey:[NSNumber numberWithDouble: (minutes - duration)]];
+        NSNumber* frameCountPast = [frames objectForKey:[NSNumber numberWithDouble: (minutes - duration)]];
+        NSLog(@"smileCountPast: %@ frameCountPast: %@", smileCountPast, frameCountPast);
+        BOOL shouldCancelNotifications = (smileCountPast != nil) &&  (frameCountPast != nil) && ((smileFrameCount - [smileCountPast floatValue ])/ (frameCount - [frameCountPast floatValue])) > 0.6;
+        
+        if ( shouldCancelNotifications)
+        {
             NSLog(@"YOU HAVE A SMILE!!!");
+            [[UIApplication sharedApplication] cancelAllLocalNotifications];
         }
     }
 }

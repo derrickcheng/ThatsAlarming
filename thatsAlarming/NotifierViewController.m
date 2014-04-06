@@ -57,7 +57,7 @@
     NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
     [timeFormat setDateFormat:@"HH:mm:ss"];
     NSString *theTime = [timeFormat stringFromDate:localNotif.fireDate];
-    localNotif.alertBody = [NSString stringWithFormat: @"It's %@. Wake Up!", theTime];
+    localNotif.alertBody = [NSString stringWithFormat: @"It's time to wake up!"];
     localNotif.soundName = UILocalNotificationDefaultSoundName;
     localNotif.applicationIconBadgeNumber = 1;
     localNotif.repeatInterval = NSMinuteCalendarUnit;
@@ -69,6 +69,7 @@
     
 	// Schedule the notification
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    
     }
 }
 
