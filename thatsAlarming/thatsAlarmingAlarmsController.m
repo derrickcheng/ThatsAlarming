@@ -7,6 +7,7 @@
 //
 
 #import "thatsAlarmingAlarmsController.h"
+#import "NotifierViewController.h"
 
 @interface thatsAlarmingAlarmsController ()
 @end
@@ -15,9 +16,20 @@
 
 @synthesize myTableView;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.alarms = [[NSMutableArray alloc] initWithArray:[[UIApplication sharedApplication] scheduledLocalNotifications]];
+    UINib* nib = [UINib nibWithNibName:@"alarmTableCell"
+                          bundle:[NSBundle mainBundle]];
+    [self.myTableView registerNib:nib forCellReuseIdentifier:@"alarmTableCell"];
+//         forCellReuseIdentifier:@"alarmTableCell"];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -46,8 +58,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"alarm";
+    NSString *cellIdentifier = @"alarmTableCell";
+    UILocalNotification* currentAlarm = [self.alarms objectAtIndex:indexPath.row];
     AlarmCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    if (cell == nil)
+    {
+        cell = [[AlarmCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    [cell setWithAlarm:currentAlarm];
     return cell;
 }
 
@@ -72,7 +90,12 @@
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
     //    + (EKEvent *)eventWithEventStore:(EKEventStore *)eventStore
-    [self.myTableView reloadData];
+    NotifierViewController * notifierUpdaterController = segue.sourceViewController;
+    if (notifierUpdaterController.localNotif)
+    {
+        [self.alarms addObject: notifierUpdaterController.localNotif];
+        [self.myTableView reloadData];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

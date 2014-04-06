@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface thatsAlarmingAppDelegate : UIResponder <UIApplicationDelegate>
+@class NotifierViewController;
 
-@property (strong, nonatomic) UIWindow *window;
+@interface thatsAlarmingAppDelegate : UIResponder <UIApplicationDelegate> {
+    UIWindow *window;
+    NotifierViewController *viewController;
+}
+
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @end

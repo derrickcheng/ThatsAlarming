@@ -21,10 +21,10 @@
 		49343CB918F0EC1C000B0D64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49343C9818F0EC1C000B0D64 /* UIKit.framework */; };
 		49343CC118F0EC1C000B0D64 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49343CBF18F0EC1C000B0D64 /* InfoPlist.strings */; };
 		49343CC318F0EC1C000B0D64 /* thatsAlarmingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49343CC218F0EC1C000B0D64 /* thatsAlarmingTests.m */; };
-		49DEC41C18F1123100D892EC /* EditOrAddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */; };
 		49DEC41E18F114C500D892EC /* alarmTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DEC41D18F114C500D892EC /* alarmTableCell.xib */; };
 		49DEC42118F115B900D892EC /* AlarmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC42018F115B900D892EC /* AlarmCell.m */; };
 		49DEC42718F1460800D892EC /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DEC42618F1460800D892EC /* cameraViewController.m */; };
+		5EAE9DC118F16B030063A20C /* NotifierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE9DC018F16B030063A20C /* NotifierViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +57,13 @@
 		49343CBE18F0EC1C000B0D64 /* thatsAlarmingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "thatsAlarmingTests-Info.plist"; sourceTree = "<group>"; };
 		49343CC018F0EC1C000B0D64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49343CC218F0EC1C000B0D64 /* thatsAlarmingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thatsAlarmingTests.m; sourceTree = "<group>"; };
-		49DEC41A18F1123100D892EC /* EditOrAddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditOrAddAlarmViewController.h; sourceTree = "<group>"; };
-		49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditOrAddAlarmViewController.m; sourceTree = "<group>"; };
 		49DEC41D18F114C500D892EC /* alarmTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alarmTableCell.xib; sourceTree = "<group>"; };
 		49DEC41F18F115B900D892EC /* AlarmCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCell.h; sourceTree = "<group>"; };
 		49DEC42018F115B900D892EC /* AlarmCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCell.m; sourceTree = "<group>"; };
 		49DEC42518F1460800D892EC /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
 		49DEC42618F1460800D892EC /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
+		5EAE9DBF18F16B030063A20C /* NotifierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifierViewController.h; sourceTree = "<group>"; };
+		5EAE9DC018F16B030063A20C /* NotifierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifierViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +127,13 @@
 				49DEC42018F115B900D892EC /* AlarmCell.m */,
 				49343CA318F0EC1C000B0D64 /* thatsAlarmingAppDelegate.h */,
 				49343CA418F0EC1C000B0D64 /* thatsAlarmingAppDelegate.m */,
+				5EAE9DBF18F16B030063A20C /* NotifierViewController.h */,
+				5EAE9DC018F16B030063A20C /* NotifierViewController.m */,
 				49343CA618F0EC1C000B0D64 /* Main.storyboard */,
 				49343CA918F0EC1C000B0D64 /* thatsAlarmingAlarmsController.h */,
 				49343CAA18F0EC1C000B0D64 /* thatsAlarmingAlarmsController.m */,
 				49343CAF18F0EC1C000B0D64 /* Images.xcassets */,
 				49343C9B18F0EC1C000B0D64 /* Supporting Files */,
-				49DEC41A18F1123100D892EC /* EditOrAddAlarmViewController.h */,
-				49DEC41B18F1123100D892EC /* EditOrAddAlarmViewController.m */,
 				49DEC41D18F114C500D892EC /* alarmTableCell.xib */,
 				49DEC42518F1460800D892EC /* cameraViewController.h */,
 				49DEC42618F1460800D892EC /* cameraViewController.m */,
@@ -273,10 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DEC42718F1460800D892EC /* cameraViewController.m in Sources */,
+				5EAE9DC118F16B030063A20C /* NotifierViewController.m in Sources */,
 				49343CA518F0EC1C000B0D64 /* thatsAlarmingAppDelegate.m in Sources */,
 				49343CAB18F0EC1C000B0D64 /* thatsAlarmingAlarmsController.m in Sources */,
 				49343CA118F0EC1C000B0D64 /* main.m in Sources */,
-				49DEC41C18F1123100D892EC /* EditOrAddAlarmViewController.m in Sources */,
 				49DEC42118F115B900D892EC /* AlarmCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +335,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -374,7 +374,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
