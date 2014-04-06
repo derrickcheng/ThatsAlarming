@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditOrAddAlarmViewController : UIViewController
+@interface EditOrAddAlarmViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
